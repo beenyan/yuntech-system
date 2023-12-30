@@ -1,0 +1,72 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "yuntech-system",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "app": {
+        "all": true
+      },
+      "clipboard": {
+        "writeText": true,
+        "readText": false
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": ["https://webapp.yuntech.edu.tw/*"]
+      }
+    },
+    "bundle": {
+      "windows": {
+        "allowDowngrades": true,
+        "certificateThumbprint": null,
+        "digestAlgorithm": null,
+        "nsis": null,
+        "timestampUrl": null,
+        "tsp": false,
+        "webviewFixedRuntimePath": null,
+        "webviewInstallMode": {
+          "silent": true,
+          "type": "downloadBootstrapper"
+        },
+        "wix": null
+      },
+      "active": true,
+      "targets": "all",
+      "identifier": "com.beenyan.yuntech.system",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "url": "/login",
+        "fullscreen": false,
+        "resizable": true,
+        "title": "雲科選課系統",
+        "width": 960,
+        "height": 600
+      }
+    ]
+  }
+}
